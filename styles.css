@@ -1,0 +1,28 @@
+.placeHolder {
+	color: #ccc;
+	font-family: "幼圆";
+	font-style: italic;
+}
+
+.tips {
+	color: #f96;
+	background:rgba(192, 255, 51, 0.3) ;
+	font-style: italic;
+	font-family: "幼圆";
+
+	position: absolute;
+	width: 200px;
+	height: 25px;
+	z-index: 99;
+	border-width: .3em;
+	
+
+}
+
+#inputdiv {
+	display: inline;
+}
+
+div {
+	display: inherit;
+}

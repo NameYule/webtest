@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A Test Of DOM Attributes</title>
+  <!-- 
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> -->
+  <link rel="stylesheet" type="text/css" href="styles.css">
+<script>
+  function setRelativePos(ele, ancele, reltop, relleft){
+    ele.offsetLeft = ancele.offsetLeft + relleft;
+    ele.offsetTop = ancele.offsetTop + reltop;
+  }
+
+  function showTips(enable){
+    //var inputBox = document.getElementById("name");
+    if(!document.getElementById("name")) return false;
+    if(!enable ) {
+      if(!document.getElementById("tips")) return false;
+      else {
+        var thischild = document.getElementById("tips")
+        thischild.parentNode.removeChild(thischild);
+        return false;
+      }
+    };
+    var inputBox = document.createElement("div");
+    inputBox.className= "tips";
+    inputBox.setAttribute("id", "tips");
+    var inputBoxTips = document.createTextNode("A description of name");
+    inputBox.appendChild(inputBoxTips);
+    var theDiv = document.getElementById("inputdiv");
+    var inpt = document.getElementById("name");
+    setRelativePos(inputBox, inpt, 165, 160);
+    theDiv.insertBefore(inputBox, inpt);
+   
+    return
+  }
+</script>
+</head>
+<body>
+ <h1>A Test Of DOM Attributes</h1>
+<div id="inputdiv">
+  <label>Name: </label>
+  <input type="text" id="name" placeholder="abcdefg" />
+  onfocus="showTips(true)" onblur="showTips(false)" 
+</div>
+
+</body>
+</html>
