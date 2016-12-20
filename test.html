@@ -43,10 +43,15 @@
 </head>
 <body>
  <h1>A Test Of DOM Attributes</h1>
+
 <div id="inputdiv">
   <label>Name: </label>
   <input type="text" id="name" placeholder="abcdefg" />
   onfocus="showTips(true)" onblur="showTips(false)" 
+  <div class="poptip">
+    <span class="poptip-arrow poptip-arrow-bottom"><em>◆</em><i>◆</i></span>
+    this is a description of the input box
+</div>
 </div>
 
 </body>
